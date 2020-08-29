@@ -4,4 +4,8 @@
     <string name="day_pass">Add pass for a day</string>
     <string name="hour_pass">add pass for a hour</string>
     <string name="add">add</string>
+    <string name="activate">activate</string>
+    <string name="deactivate">deactivate</string>
+    <string name="day_title">day:</string>
+    <string name="hour_title">hour:</string>
 </resources>
