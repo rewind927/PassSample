@@ -1,4 +1,4 @@
-package com.passexample.view
+package com.passexample.view.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -27,15 +27,21 @@ class PassAdapter(private val list: List<Pass>, private val adapterCallback: Ada
         holder.tvPassType.text = "${list[position].passType.name}  PASS : ${list[position].amount}"
         refreshActivateButton(holder, position)
         holder.buttonActivate.setOnClickListener {
-            list[position].activate = !list[position].activate
-            refreshActivateButton(holder, position)
-            adapterCallback.onPassChange(list[position])
+            val activateStatus = list[position].activate
+            if (!activateStatus) {
+                list[position].activate = !activateStatus
+                refreshActivateButton(holder, position)
+                adapterCallback.onPassChange(list[position])
+            }
         }
         holder.tvAddTime.text = list[position].addTime
     }
 
     private fun refreshActivateButton(holder: PassViewHolder, position: Int) {
-        holder.buttonActivate.text = if (list[position].activate) "deactivate" else "activate"
+        if (list[position].activate) {
+            holder.buttonActivate.text =
+                holder.buttonActivate.context.getString(R.string.deactivate)
+        }
     }
 
 
