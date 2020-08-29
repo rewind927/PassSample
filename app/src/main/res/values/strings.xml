@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PassExample</string>
+    <string name="pass_title">Please add the pass you want!!</string>
+    <string name="day_pass">Add pass for a day</string>
+    <string name="hour_pass">add pass for a hour</string>
+    <string name="add">add</string>
+</resources>
